@@ -27,7 +27,7 @@ const LoginForm = (props) => {
 
     return (
         <>
-             <form className="loginForm" /*onSubmit={(e) => handleSubmit(e)}*/>  
+             <form className="loginForm" onSubmit={(e) => handleSubmit(e)}>  
                 <label htmlFor="username"></label>
                 <input className="loginUsername" placeholder="Username:" type="text" required id="username"></input>
 
