@@ -29,7 +29,7 @@ class App extends Component {
           <Switch>
             <PrivateRoute
               exact
-              path={'/'}
+              path={'/dashboard'}
               component={DashboardPage}
             />
             <PublicOnlyRoute
