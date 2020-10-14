@@ -5,7 +5,7 @@ import NavBar from '../NavBar/NavBar';
 import PrivateRoute from '../Utils/PrivateRoute';
 import PublicOnlyRoute from '../Utils/PublicOnlyRoute';
 import Landing from "../../Routes/LandingPage/LandingPage";
-import NewUser from "../../Routes/RegistrationPage/RegistrationPage";
+import RegistrationPage from "../../Routes/RegistrationPage/RegistrationPage";
 import LoginPage from "../../Routes/LoginPage/LoginPage";
 import TokenService from '../../Services/token-service'
 import Logout from "../../Routes/Logout/Logout";
@@ -54,7 +54,7 @@ const App = () => {
               setIsLoggedIn={setIsLoggedIn}
             />}
           />
-          
+
           <Route 
             component={NotFoundPage}
           /> 
