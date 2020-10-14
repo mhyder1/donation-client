@@ -3,7 +3,7 @@ import { Route, Redirect } from 'react-router-dom'
 import HubContext from '../../contexts/HubContext'
 import UserContext from '../../contexts/UserContext'
 
-
+// @TODO: use static ContextType UserContext
 export default function PrivateRoute({ component, ...props }) {
   const Component = component
   return (
