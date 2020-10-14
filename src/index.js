@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom'
 import { UserProvider } from './contexts/UserContext'
 import { HubProvider} from './contexts/HubContext'
-import App from '../src/components/App/App';
+import App from '../src/Components/App/App';
 import './index.css';
 import * as serviceWorker from './serviceWorker'
 

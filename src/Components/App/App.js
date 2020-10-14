@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { Route, Switch} from 'react-router-dom'
 import Header from '../Header/Header'
-import PrivateRoute from '../../components/PrivateRoute/PrivateRoute'
-import PublicOnlyRoute from '../../components/PublicOnlyRoute/PublicOnlyRoute'
-import LandingPage from '../../routes/LandingPage/LandingPage'
-import LoginPage from '../../routes/LoginPage/LoginPage'
-import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
-import DashboardPage from '../../routes/DashboardPage/DashboardPage'
-import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage'
+import PrivateRoute from '../PrivateRoute/PrivateRoute'
+import PublicOnlyRoute from '../PublicOnlyRoute/PublicOnlyRoute'
+import LandingPage from '../../Routes/LandingPage/LandingPage'
+import LoginPage from '../../Routes/LoginPage/LoginPage'
+import RegistrationPage from '../../Routes/RegistrationPage/RegistrationPage'
+import DashboardPage from '../../Routes/DashboardPage/DashboardPage'
+import NotFoundPage from '../../Routes/NotFoundPage/NotFoundPage'
 
 class App extends Component {
   state = { hasError: false }
