@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Redirect } from 'react-router-dom'
 import UserContext from '../../contexts/UserContext'
-
+// @TODO: use static contextType UserContext
 export default function PublicOnlyRoute({ component, ...props }) {
   const Component = component
   return (

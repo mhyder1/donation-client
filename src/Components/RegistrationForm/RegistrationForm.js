@@ -6,6 +6,7 @@ import AuthApiService from '../../services/auth-api-service'
 import Button from '../Button/Button'
 import './RegistrationForm.css'
 
+// @TODO: add password verification
 class RegistrationForm extends Component {
   static defaultProps = {
     onRegistrationSuccess: () => { }

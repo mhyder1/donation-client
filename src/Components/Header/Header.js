@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom'
 import TokenService from '../../services/token-service'
 import './Header.css'
 
-
+// @TODO: logout should be a button
+// @TODO: Header needs history prop (wrap it in Route)
+// @TODO: navigate away after logging out
 
 class Header extends Component {
-  
   handleLogoutClick = () => {
     this.context.processLogout()
   }
@@ -50,6 +51,7 @@ class Header extends Component {
           </Link>
         </h1>
         <div className='nav'>
+          {/* @TODO: Use UserContext user.id */}
           {TokenService.hasAuthToken()
             ? this.renderLogoutLink()
             : this.renderLoginLink()}
