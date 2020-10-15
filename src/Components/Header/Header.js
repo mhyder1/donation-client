@@ -25,10 +25,12 @@ class Header extends Component {
             to='/'>
             Logout
           </Link>
-
-          <span className='nav-item'>
-            { /*this.context.user.name configure context to hold the name */}
-          </span>
+        {' '}
+          <Link
+            className='nav-item'
+            to='/user'>
+              {this.context.user.name}{ /*John Doe*/}
+          </Link>
         </nav>
       </div>
     )
