@@ -17,7 +17,7 @@ class Header extends Component {
   renderLogoutLink() {
     return (
       
-      <div>
+      <div className='header-container'>
         <nav>
           <Link
             className='nav-item'

@@ -19,9 +19,6 @@ class LoginPage extends Component {
     render() {
         return(
             <div className="loginPageDisplay">
-            <div className="loginHeader">
-                <h1>Donation Hub</h1>
-            </div>
             <div className="sideText">
                 Become a Community Champion
             </div>

@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+.nav a, .nav a:hover, .nav a:focus, .nav a:active {
+    font-family: 'Roboto Condensed', sans-serif;    
+    color: black;
+    
+}
+.header a, .header a:hover, .header a:focus, .header a:active {
+    font-family: 'Roboto Condensed', sans-serif;    
+    text-decoration: none;
+    color: black; 
+}
+@media all and (min-width:1000px){
+    .header{
+        font-size: 75px;
+        padding-bottom: 0;
+    }
+    .nav{
+        font-size: 20px;
+    }
+}
