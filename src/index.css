@@ -7,6 +7,23 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+#maps-root, #react-root {
+  position: absolute;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+#maps-root {
+  z-index: -1;
+}
+
+#react-root>* {
+  background-color: white;
+  border-radius: 1rem;
+  margin: 1rem;
+  padding: 1rem;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
