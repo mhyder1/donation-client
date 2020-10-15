@@ -1,5 +1,5 @@
 import React from 'react';
-import TokenService from '../../Services/token-service';
+import TokenService from '../../Service/token-service';
 import {Link} from 'react-router-dom';
 
 
