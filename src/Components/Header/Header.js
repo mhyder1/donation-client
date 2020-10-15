@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import UserContext from '../../contexts/UserContext'
 import TokenService from '../../services/token-service'
 import './Header.css'
 
@@ -8,6 +9,7 @@ import './Header.css'
 // @TODO: navigate away after logging out
 
 class Header extends Component {
+  static contextType = UserContext
   handleLogoutClick = () => {
     this.context.processLogout()
   }
@@ -25,7 +27,7 @@ class Header extends Component {
           </Link>
 
           <span className='nav-item'>
-            {this.context.user.name}
+            { /*this.context.user.name configure context to hold the name */}
           </span>
         </nav>
       </div>
