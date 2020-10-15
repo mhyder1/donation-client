@@ -5,17 +5,21 @@ import { UserProvider } from './contexts/UserContext'
 import { HubProvider} from './contexts/HubContext'
 import App from '../src/Components/App/App';
 import './index.css';
-import * as serviceWorker from './serviceWorker'
 
-ReactDOM.render(
+window.initMap = () => {
+  const map = new window.google.maps.Map(document.getElementById('maps-root'), {
+    center: {lat: -34.397, lng: 150.644},
+    disableDefaultUI: true,
+    zoom: 8
+  });
+  ReactDOM.render(
     <BrowserRouter>
       <UserProvider>
         <HubProvider>
-                <App />
+          <App {...{map}}/>
         </HubProvider>
       </UserProvider>
     </BrowserRouter>,
-    document.getElementById('root'),
-  )
-  
-  serviceWorker.unregister()
+    document.getElementById('react-root'),
+  );
+}
