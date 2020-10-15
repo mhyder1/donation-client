@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
 
 .nav a, .nav a:hover, .nav a:focus, .nav a:active {
-    font-family: 'Roboto Condensed', sans-serif;    
+    font-family: 'Quicksand', sans-serif;  
     color: black;
     
 }
 .header a, .header a:hover, .header a:focus, .header a:active {
-    font-family: 'Roboto Condensed', sans-serif;    
+    font-family: 'Quicksand', sans-serif;   
     text-decoration: none;
     color: black; 
 }
