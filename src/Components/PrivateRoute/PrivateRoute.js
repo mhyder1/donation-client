@@ -5,8 +5,10 @@ import UserContext from '../../contexts/UserContext'
 
 // @TODO: use static ContextType UserContext
 export default function PrivateRoute({ component, ...props }) {
+
   const Component = component
   return (
+    
     <Route
       {...props}
       render={componentProps => (

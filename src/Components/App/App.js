@@ -8,6 +8,7 @@ import LoginPage from '../../routes/LoginPage/LoginPage'
 import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
 import DashboardPage from '../../routes/DashboardPage/DashboardPage'
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage'
+import UserPage from '../../routes/UserPage/UserPage'
 
 class App extends Component {
   state = { hasError: false }
@@ -31,6 +32,10 @@ class App extends Component {
               exact
               path={'/dashboard'}
               component={DashboardPage}
+            />
+            <PrivateRoute
+              path={'/user'}
+              component={UserPage}
             />
             <PublicOnlyRoute
               exact
