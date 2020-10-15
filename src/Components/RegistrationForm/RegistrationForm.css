@@ -1,0 +1,27 @@
+.registration-form{
+    box-shadow: 5px 10px#196DDB;
+    padding: 40px;
+    margin:20px;
+    margin-top: 5px;     
+}
+.form-line{
+    text-align: center;
+    padding: 10px;
+}
+
+.form-line a{
+    color: black; 
+}
+@media all and (max-width:400px){
+
+  .registration-form{
+      margin-right:0px;
+      margin-left:0px;
+      padding-right:0px;
+      padding-left:0px;
+  }
+  .form-line{
+      padding:5px;
+  }
+
+}

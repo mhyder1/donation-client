@@ -10,6 +10,7 @@ import DashboardPage from '../../routes/DashboardPage/DashboardPage'
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage'
 import UserPage from '../../routes/UserPage/UserPage'
 import HubPage from '../../routes/HubPage/HubPage'
+import './App.css'
 
 class App extends Component {
   state = { hasError: false }

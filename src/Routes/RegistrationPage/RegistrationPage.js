@@ -20,7 +20,7 @@ class RegistrationPage extends Component {
         return(
         <>
         <div className="registrationHeader">
-            Become A Community Champion
+            Become a Community Champion
         </div>
 
         <section className="registrationBody">
