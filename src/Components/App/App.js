@@ -10,8 +10,6 @@ import LoginPage from "../../Routes/LoginPage/LoginPage";
 import TokenService from '../../Services/token-service'
 import Logout from "../../Routes/Logout/Logout";
 import NotFoundPage from "../../Routes/NotFoundPage/NotFoundPage";
-import RegistrationPage from "../../Routes/RegistrationPage/RegistrationPage";
-
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -26,7 +24,7 @@ const App = () => {
   return (
     <div className="App">
     <header className="AppNavBar">
-      <NavBar isLoggedIn={isLoggedIn}/>
+ {/*     <NavBar isLoggedIn={isLoggedIn}/> */}
     </header>
       <p></p>
       <p></p>

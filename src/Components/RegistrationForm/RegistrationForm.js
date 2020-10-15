@@ -20,11 +20,11 @@ const RegistrationForm = (props) => {
             password: password.value,
         })
         .then(user => {
-            name.value ="",
-            username.value ="",
-            password.value="",
-            passwordVerify=""
-            props.onRegistrationSuccess()
+            name.value ="";
+            username.value ="";
+            password.value="";
+            passwordVerify="";
+            props.onRegistrationSuccess();
         })
         .catch(res => {
             setError(res.error);
