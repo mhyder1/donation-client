@@ -3,6 +3,7 @@ import './LoginPage.css';
 import LoginForm2 from '../../components/LoginForm2/LoginForm2';
 
 class LoginPage extends Component {
+        //did you still need my history props?
 
     static defaultProps = {
         location: {},
