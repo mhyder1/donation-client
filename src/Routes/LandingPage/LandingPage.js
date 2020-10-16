@@ -16,15 +16,23 @@ class LandingPage extends Component {
         return(
             <>
             <div className="landingText">
-                Welcome to Donation Gub,
-                where you can pick a company
-                and give them shit. Click on find 
-                opportunities to create an account
-                and get started!
+                Welcome to Donation Gub! We know
+                finding somewhere to donate or knowing what 
+                to donate can be hard. Using this website,
+                you will be able to access local organizations
+                that could use your help. You should be able
+                to find checklists affiliated with those organizations,
+                so that you know exactly what and how much to give! Click
+                on Find Opportunities to get started, or log in to your
+                existing account! 
             </div>
             <Link className="landingButton" to='/register'>
                 <b>Find Opportunities</b>
             </Link>
+            <Link className="landingButton" to='/login'>
+                <b>Login</b>
+            </Link>
+            
            </>
         );
     }
