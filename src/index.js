@@ -10,7 +10,8 @@ window.initMap = () => {
   const map = new window.google.maps.Map(document.getElementById('maps-root'), {
     center: {lat: -34.397, lng: 150.644},
     disableDefaultUI: true,
-    zoom: 8
+    gestureHandling: 'greedy',
+    zoom: 8,
   });
   ReactDOM.render(
     <BrowserRouter>
