@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import UserContext from '../../contexts/UserContext'
-import TokenService from '../../services/token-service'
+import TokenService from '../../service/token-service'
 import './Header.css'
 
 // @TODO: logout should be a button
