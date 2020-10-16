@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Input, Label } from '../Form/Form'
-import AuthApiService from '../../service/auth-api-service'
+import AuthApiService from '../../services/auth-api-service'
 import UserContext from '../../contexts/UserContext'
 import Button from '../Button/Button'
 import './LoginForm2.css';
