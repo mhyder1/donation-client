@@ -28,8 +28,21 @@ class App extends Component {
         <main>
           {hasError && (
             <p>There was an error! Oh no!</p>
-          )}
+            )}
           <Switch>
+            <Route
+              exact
+              path={'/'}
+              component={LandingPage}
+            />
+            <PublicOnlyRoute
+              path={'/register'}
+              component={RegistrationPage}
+            />
+            <PublicOnlyRoute
+              path={'/login'}
+              component={LoginPage}
+            />
             <PrivateRoute
               exact
               path={'/dashboard'}
@@ -42,19 +55,6 @@ class App extends Component {
             <PrivateRoute
               path={'/user'}
               component={UserPage}
-            />
-            <PublicOnlyRoute
-              exact
-              path={'/'}
-              component={LandingPage}
-            />
-            <PublicOnlyRoute
-              path={'/register'}
-              component={RegistrationPage}
-            />
-            <PublicOnlyRoute
-              path={'/login'}
-              component={LoginPage}
             />
             <Route
               component={NotFoundPage}
