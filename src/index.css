@@ -22,6 +22,7 @@ body {
 }
 
 #react-root>* {
+  box-shadow: 5px 10px#196DDB;
   background-color: white;
   border-radius: 1rem;
   margin: 1rem;
