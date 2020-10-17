@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './LandingPage.css';
 import {Link} from 'react-router-dom';
+import TokenService from '../../services/token-service'
 
 
 class LandingPage extends Component {
@@ -16,7 +17,7 @@ class LandingPage extends Component {
         return(
             <>
             <div className="landingText">
-                Welcome to Donation Gub! We know
+                Welcome to Donation Hub! We know
                 finding somewhere to donate or knowing what 
                 to donate can be hard. Using this website,
                 you will be able to access local organizations
@@ -26,12 +27,13 @@ class LandingPage extends Component {
                 on Find Opportunities to get started, or log in to your
                 existing account! 
             </div>
-            <Link className="landingButton" to='/register'>
-                <b>Find Opportunities</b>
-            </Link>
-            {/*vv Not a part of the wireframe, not sure why it was added vv */}
+            {TokenService.hasAuthToken()
+            ? <Link className="landingButton" to='/dashboard'><b>View Dashboard</b></Link>
+            : <Link className="landingButton" to='/register'><b>Let's get started!</b></Link>}
+
+            {/* Not a part of the wireframe, not sure why it was added
             
-            {/* <Link className="landingButton" to='/login'>
+            <Link className="landingButton" to='/login'>
                 <b>Login</b>
             </Link> */}
             

@@ -6,7 +6,6 @@ import './Header.css'
 
 // @TODO: logout should be a button
 // @TODO: Header needs history prop (wrap it in Route)
-// @TODO: navigate away after logging out
 
 class Header extends Component {
   static contextType = UserContext
@@ -29,7 +28,7 @@ class Header extends Component {
           <Link
             className='nav-item'
             to='/user'>
-              {this.context.user.name}{ /*John Doe*/}
+             {this.context.user.name}
           </Link>
         </nav>
       </div>

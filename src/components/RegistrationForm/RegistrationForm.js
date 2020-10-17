@@ -20,7 +20,7 @@ class RegistrationForm extends Component {
     ev.preventDefault()
     const { name, username, password } = ev.target
     AuthApiService.postUser({
-      name: name.value,
+      label: name.value,
       username: username.value,
       password: password.value,
     })

@@ -1,14 +1,10 @@
 import React, { Component } from 'react'
 import './DashboardPage.css';
+import { Link } from 'react-router-dom'
+import HubContext from '../../contexts/HubContext'
 
 class DashboardPage extends Component {
-
-    constructor(props) {
-        super(props)
-        this.state = {
-            
-        };
-    }
+    static contextType = HubContext
 
     render() {
         return(
