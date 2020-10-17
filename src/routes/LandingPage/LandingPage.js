@@ -29,9 +29,11 @@ class LandingPage extends Component {
             <Link className="landingButton" to='/register'>
                 <b>Find Opportunities</b>
             </Link>
-            <Link className="landingButton" to='/login'>
+            {/*vv Not a part of the wireframe, not sure why it was added vv */}
+            
+            {/* <Link className="landingButton" to='/login'>
                 <b>Login</b>
-            </Link>
+            </Link> */}
             
            </>
         );
