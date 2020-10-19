@@ -1,8 +1,6 @@
 import React from 'react'
 import './Utils.css'
 
-
-
 export function Hyph() {
   return <span className='Hyph'>{' - '}</span>
 }

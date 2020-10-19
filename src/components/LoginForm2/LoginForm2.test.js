@@ -1,4 +1,3 @@
-  
 import LoginForm2 from './LoginForm2.js';
 import React from 'react';
 import ReactDOM from 'react-dom';
