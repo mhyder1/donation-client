@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './HubPage.css';
+import { Link } from 'react-router-dom'
 import HubContext from '../../contexts/HubContext';
 import image from '../../images/static-hub.jpg'
 
@@ -22,7 +23,7 @@ class HubPage extends Component {
                         <input type="number" id="quantity" name="quantity" min="0" max="100"/> 
                    </li>
                </ul>
-
+               <Link className="user-back-to-dash" to='/dashboard'>Back to Dashboard</Link>
             </div>
         );
     }
