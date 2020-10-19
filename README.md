@@ -3,7 +3,6 @@
 
 # Landing Page user story
 
-
 ## Google map API is  the background
 ## The header is displayed
 ## I can see a summary of the app

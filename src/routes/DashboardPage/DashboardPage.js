@@ -10,6 +10,8 @@ class DashboardPage extends Component {
         return(
             <div className='container'>
                dashboard content goes here
+               <br/>
+               <Link to='/hub/test'>test link to hub page</Link>
             </div>
         );
     }
