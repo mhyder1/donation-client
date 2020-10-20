@@ -7,7 +7,7 @@ import App from '../src/components/App/App';
 import './index.css';
 
 window.initMap = () => {
-  const map = new window.google.maps.Map(document.getElementById('maps-root'), {
+  window.map = new window.google.maps.Map(document.getElementById('maps-root'), {
     center: {lat: -34.397, lng: 150.644},
     disableDefaultUI: true,
     gestureHandling: 'greedy',
@@ -17,7 +17,7 @@ window.initMap = () => {
     <BrowserRouter>
       <UserProvider>
         <HubProvider>
-          <App {...{map}}/>
+          <App />
         </HubProvider>
       </UserProvider>
     </BrowserRouter>,
