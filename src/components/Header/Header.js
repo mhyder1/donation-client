@@ -30,6 +30,12 @@ class Header extends Component {
             to='/user'>
              {this.context.user.name}
           </Link>
+        {' '}
+          <Link 
+            className="landingButton" 
+            to='/dashboard'>
+              <b>Dashboard</b>
+          </Link>
         </nav>
       </div>
     )
