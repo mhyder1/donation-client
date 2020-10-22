@@ -1,0 +1,28 @@
+import React, { Component } from 'react'
+import './NewLocationPage.css';
+import NewForm from '../../components/NewForm/NewForm';
+
+class NewLocationPage extends Component {
+    static defaultProps = {
+        location: {},
+        history: {
+          push: () => { },
+        },
+    }
+    handleSubmitSuccess = () => {
+        const { location, history } = this.props
+        const destination = (location.state || {}).from || '/dashboard'
+        history.push(destination)
+    }  
+    render() {
+        return(
+            <div className='new-location-container'>
+               <NewForm
+                onSubmitSuccess={this.handleSubmitSuccess}
+               />
+            </div>
+        );
+    }
+}
+
+export default NewLocationPage
