@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import './HubPage.css';
+import './SitePage.css';
 import { Link } from 'react-router-dom'
 import HubContext from '../../contexts/HubContext';
 import image from '../../images/static-hub.jpg'
 
-class HubPage extends Component {
-    static contextType = HubContext
+class SitePage extends Component {
+    static contextType = HubContext;
 
 
     render() {
@@ -29,4 +29,4 @@ class HubPage extends Component {
     }
 }
 
-export default HubPage
+export default SitePage;

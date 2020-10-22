@@ -1,19 +1,29 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import './SearchForm.css';
-import { Input, Label } from '../Form/Form'
+import { Input, Label } from '../Form/Form';
 
 class SearchForm extends Component {
-  state = { error: null }
 
   searchBoxRef = React.createRef();
+  state = { error: null };
 
   componentDidMount() {
-      this.postRender();
-      this.searchBoxRef.current.focus();
+    this.postRender();
+    this.searchBoxRef.current.focus();
   }
   
   componentDidUpdate() {
     this.postRender();
+  }
+
+  getBottom() {
+    return this.searchBoxRef.current.getBoundingClientRect().bottom;
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    return false;
   }
 
   render() {
@@ -42,18 +52,18 @@ class SearchForm extends Component {
   }
 
   postRender() {
+    const { history, uiRef } = this.props;
+    if(uiRef)
+      uiRef.current = this;
     const autocomplete = new window.google.maps.places.Autocomplete(this.searchBoxRef.current);
     autocomplete.addListener("place_changed", () => {
-      const { map } = window;
-      if(!map) // prevent this component from blowing up if tested without an attached map
-        return;
-      // height of the top area, plus 4rem for App (margin-top + padding-top + padding-bottom + margin-bottom)
-      const offset = this.searchBoxRef.current.getBoundingClientRect().bottom
-        + 4 * parseFloat(window.getComputedStyle(document.documentElement).fontSize);
-      console.log(`map-padding-top: ${offset}`);
-      map.fitBounds(autocomplete.getPlace().geometry.viewport, { top: offset });
+      const place = autocomplete.getPlace();
+      window.sessionStorage.setItem("targetPlace", place);
+      const { viewport } = place.geometry;
+      const ne = viewport.getNorthEast(), sw = viewport.getSouthWest();
+      history.push(`/sites?${sw.lng()},${ne.lat()},${ne.lng()},${sw.lat()}`);
     });
   }
 }
 
-export default SearchForm;
+export default withRouter(SearchForm);

@@ -9,10 +9,10 @@ import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
 import DashboardPage from '../../routes/DashboardPage/DashboardPage'
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage'
 import UserPage from '../../routes/UserPage/UserPage'
-import HubPage from '../../routes/HubPage/HubPage'
+import SitePage from '../../routes/SitePage/SitePage'
 import NewLocationPage from '../../routes/NewLocationPage/NewLocationPage'
 import './App.css'
-
+import SiteListPage from '../../routes/SiteListPage/SiteListPage';
 
 class App extends Component {
   state = { hasError: false }
@@ -37,25 +37,30 @@ class App extends Component {
               path={'/'}
               component={LandingPage}
             />
-            <PublicOnlyRoute
-              path={'/register'}
-              component={RegistrationPage}
+            <PrivateRoute
+              exact
+              path={'/dashboard'}
+              component={DashboardPage}
             />
             <PublicOnlyRoute
               path={'/login'}
               component={LoginPage}
             />
             <PrivateRoute
-              path={'/dashboard'}
-              component={DashboardPage}
-            />
-            <PrivateRoute
               path={'/new'}
               component={NewLocationPage}
+            /><PublicOnlyRoute
+              path={'/register'}
+              component={RegistrationPage}
+            />
+            <Route
+              exact
+              path="/sites"
+              component={SiteListPage}
             />
             <PrivateRoute
-              path={'/hub/:id'}
-              component={HubPage}
+              path={'/sites/:id'}
+              component={SitePage}
             />
             <PrivateRoute
               path={'/user'}
