@@ -28,7 +28,7 @@ class SearchForm extends Component {
         </div>
         <div className="form-line">
           <Label htmlFor='search-form-input'>
-            Look for sites to donate:
+            Search your area:
           </Label>
           <Input
             ref={this.searchBoxRef}

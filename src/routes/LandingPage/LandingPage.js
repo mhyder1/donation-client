@@ -3,6 +3,7 @@ import './LandingPage.css';
 import {Link} from 'react-router-dom';
 import TokenService from '../../services/token-service'
 import SearchForm from '../../components/SearchForm/SearchForm'
+import Button from '../../components/Button/Button'
 
 
 class LandingPage extends Component {
@@ -18,26 +19,23 @@ class LandingPage extends Component {
         return(
             <>
             <div className="landingText">
-                Welcome to Donation Hub! We know
-                finding somewhere to donate or knowing what 
-                to donate can be hard. Using this website,
-                you will be able to access local organizations
-                that could use your help. You should be able
-                to find checklists affiliated with those organizations,
-                so that you know exactly what and how much to give! Click
-                on Find Opportunities to get started, or log in to your
-                existing account! 
+                Stop donating whatever to wherever or whoever, and start giving your belongings the second life they deserve
+                by donating through Donation Hub! Welcome to Donation Hub, where you can find the donation centers nearest to you and 
+                see what items they are most in need of. Make an account to give back to the community even more through sharing your donations, 
+                flagging inaccurate information, and letting us know when there are new donation centers in your area. Get started today!
             </div>
-            {TokenService.hasAuthToken()
-            ? <Link className="landingButton" to='/dashboard'><b>View Dashboard</b></Link>
-            : <Link className="landingButton" to='/register'><b>Let's get started!</b></Link>}
+             
             <SearchForm/>
+            {/* {!TokenService.hasAuthToken()
+                ? <Link className="landingButton" to='/register'><Button>Register for more features!</Button></Link>
+                : <></>
+            } */}
             {/* Not a part of the wireframe, not sure why it was added
             
             <Link className="landingButton" to='/login'>
                 <b>Login</b>
             </Link> */}
-            
+
            </>
         );
     }
