@@ -49,7 +49,8 @@ class App extends Component {
             <PrivateRoute
               path={'/new'}
               component={NewLocationPage}
-            /><PublicOnlyRoute
+            />
+            <PublicOnlyRoute
               path={'/register'}
               component={RegistrationPage}
             />
@@ -58,7 +59,7 @@ class App extends Component {
               path="/sites"
               component={SiteListPage}
             />
-            <PrivateRoute
+            <Route
               path={'/sites/:id'}
               component={SitePage}
             />

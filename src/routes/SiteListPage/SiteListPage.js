@@ -41,6 +41,24 @@ class SiteListPage extends Component {
     if(!map) // prevent this component from blowing up if tested without an attached map
       return;
     this.setMapBoundsFromQuery(map, this.props.location.search);
+    // TODO -- build site markers from backend service intead of test data
+    /*
+    const bounds = map.getBounds();
+    const sw = bounds.getSouthWest(), ne = bounds.getNorthEast();
+    const box = [ sw.lng(), ne.lat(), ne.lng(), sw.lat() ];
+    */
+    const center = map.getCenter();
+    const fakeSite = { lat: center.lat(), lon: center.lng(), label: "Test Site" };
+    
+    window.markers.forEach(marker => marker.setMap(null));
+
+    const marker = new window.google.maps.Marker({
+      label: fakeSite.label,
+      map: map,
+      position: { lat: fakeSite.lat, lng: fakeSite.lon },
+    });
+    window.markers = [ marker ];
+    marker.addListener('click', () => this.props.history.push(`/sites/TEST`));
   }
 
   render() {

@@ -7,6 +7,7 @@ import App from '../src/components/App/App';
 import './index.css';
 
 window.initMap = () => {
+  window.markers = [];
   window.map = new window.google.maps.Map(document.getElementById('maps-root'), {
     center: {lat: -34.397, lng: 150.644},
     disableDefaultUI: true,
