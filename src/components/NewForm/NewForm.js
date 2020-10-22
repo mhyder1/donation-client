@@ -31,6 +31,7 @@ class NewForm extends Component {
     }
 
     componentDidMount() {
+        this.postRender()
         this.firstInput.current.focus()
     }
 
@@ -40,6 +41,17 @@ class NewForm extends Component {
             <form className="new-form form">
                 <div role='alert'>
                     {error && <p>{error}</p>}
+                </div>
+                <div className="form-line">     
+                    <Label htmlFor='location-address-input'>
+                        Enter a location:<Required />
+                    </Label>
+                    <Input
+                        ref={this.searchBoxRef}
+                        id='location-address-input'
+                        name='search'
+                        placeholder='zipcode/address'
+                    />
                 </div>
                 <div className="form-line">
                     <Label htmlFor='location-name-input'>
@@ -60,17 +72,6 @@ class NewForm extends Component {
                         id='location-description-input'
                         name='description'
                         required
-                    />
-                </div>
-                <div className="form-line">     
-                    <Label htmlFor='location-address-input'>
-                        Enter a location:<Required />
-                    </Label>
-                    <Input
-                        ref={this.searchBoxRef}
-                        id='location-address-input'
-                        name='search'
-                        placeholder='zipcode/address'
                     />
                 </div>
                 <footer className="form-line">
