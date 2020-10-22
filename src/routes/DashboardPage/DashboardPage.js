@@ -3,6 +3,7 @@ import './DashboardPage.css';
 import { Link } from 'react-router-dom'
 import HubContext from '../../contexts/HubContext'
 import SearchForm from '../../components/SearchForm/SearchForm'
+import Button from '../../components/Button/Button'
 
 class DashboardPage extends Component {
     static contextType = HubContext
@@ -12,7 +13,8 @@ class DashboardPage extends Component {
             <div className='container'>
                dashboard content goes here
                <br/>
-               <Link to='/hub/test'>test link to hub page</Link>
+               <Link to='/hub/test'><Button>test link to hub page</Button></Link>
+               <Link to='/new'><Button>Add a donation site +</Button></Link>
                <SearchForm/>
             </div>
         );
