@@ -13,6 +13,7 @@ class NewForm extends Component {
     state = { error: null }
 
     firstInput = React.createRef()
+    searchBoxRef = React.createRef()
 
     handleSubmit = ev => {
         ev.preventDefault()
@@ -45,7 +46,7 @@ class NewForm extends Component {
                         Name of location:<Required />
                     </Label>
                     <Input
-
+                        ref={this.firstInput}
                         id='location-name-input'
                         name='name'
                         required
@@ -66,7 +67,7 @@ class NewForm extends Component {
                         Enter a location:<Required />
                     </Label>
                     <Input
-                        ref={this.firstInput}
+                        ref={this.searchBoxRef}
                         id='location-address-input'
                         name='search'
                         placeholder='zipcode/address'
@@ -81,7 +82,7 @@ class NewForm extends Component {
         );
     }
     postRender() {
-        const autocomplete = new window.google.maps.places.Autocomplete(this.firstInput.current);
+        const autocomplete = new window.google.maps.places.Autocomplete(this.searchBoxRef.current);
         autocomplete.addListener("place_changed", () => {
           const { map } = window;
           if(!map) // prevent this component from blowing up if tested without an attached map
