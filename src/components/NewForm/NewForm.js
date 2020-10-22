@@ -31,6 +31,7 @@ class NewForm extends Component {
     }
 
     componentDidMount() {
+        this.postRender()
         this.firstInput.current.focus()
     }
 
@@ -41,15 +42,29 @@ class NewForm extends Component {
                 <div role='alert'>
                     {error && <p>{error}</p>}
                 </div>
+                <div className="form-line">     
+                    <Label htmlFor='location-address-input'>
+                        Address:<Required />
+                    </Label>
+                    <Input
+                        ref={this.searchBoxRef}
+                        id='location-address-input'
+                        name='search'
+                        placeholder='Zipcode/Address'
+                        required
+                    />
+                </div>
                 <div className="form-line">
                     <Label htmlFor='location-name-input'>
-                        Name of location:<Required />
+                        Title :<Required />
                     </Label>
                     <Input
                         ref={this.firstInput}
                         id='location-name-input'
                         name='name'
+                        placeholder='Goodwill'
                         required
+
                     />
                 </div> 
                 <div className="form-line">
@@ -59,18 +74,8 @@ class NewForm extends Component {
                     <Textarea
                         id='location-description-input'
                         name='description'
+                        placeholder='Who benefits from this organization?'
                         required
-                    />
-                </div>
-                <div className="form-line">     
-                    <Label htmlFor='location-address-input'>
-                        Enter a location:<Required />
-                    </Label>
-                    <Input
-                        ref={this.searchBoxRef}
-                        id='location-address-input'
-                        name='search'
-                        placeholder='zipcode/address'
                     />
                 </div>
                 <footer className="form-line">
