@@ -44,24 +44,27 @@ class NewForm extends Component {
                 </div>
                 <div className="form-line">     
                     <Label htmlFor='location-address-input'>
-                        Enter a location:<Required />
+                        Address:<Required />
                     </Label>
                     <Input
                         ref={this.searchBoxRef}
                         id='location-address-input'
                         name='search'
-                        placeholder='zipcode/address'
+                        placeholder='Zipcode/Address'
+                        required
                     />
                 </div>
                 <div className="form-line">
                     <Label htmlFor='location-name-input'>
-                        Name of location:<Required />
+                        Title :<Required />
                     </Label>
                     <Input
                         ref={this.firstInput}
                         id='location-name-input'
                         name='name'
+                        placeholder='Goodwill'
                         required
+
                     />
                 </div> 
                 <div className="form-line">
@@ -71,6 +74,7 @@ class NewForm extends Component {
                     <Textarea
                         id='location-description-input'
                         name='description'
+                        placeholder='Who benefits from this organization?'
                         required
                     />
                 </div>
