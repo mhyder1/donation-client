@@ -10,7 +10,9 @@ import DashboardPage from '../../routes/DashboardPage/DashboardPage'
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage'
 import UserPage from '../../routes/UserPage/UserPage'
 import HubPage from '../../routes/HubPage/HubPage'
+import NewLocationPage from '../../routes/NewLocationPage/NewLocationPage'
 import './App.css'
+
 
 class App extends Component {
   state = { hasError: false }
@@ -44,9 +46,12 @@ class App extends Component {
               component={LoginPage}
             />
             <PrivateRoute
-              exact
               path={'/dashboard'}
               component={DashboardPage}
+            />
+            <PrivateRoute
+              path={'/new'}
+              component={NewLocationPage}
             />
             <PrivateRoute
               path={'/hub/:id'}
