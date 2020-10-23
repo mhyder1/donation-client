@@ -13,7 +13,7 @@ class DashboardPage extends Component {
             <div className='container'>
                dashboard content goes here
                <br/>
-               <Link to='/hub/test'><Button>test link to hub page</Button></Link>
+               <Link to='/sites/test'><Button>test link to hub page</Button></Link>
                <Link to='/new'><Button>Add a donation site +</Button></Link>
                <SearchForm/>
             </div>
