@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import './LandingPage.css';
-import {Link} from 'react-router-dom';
-import TokenService from '../../services/token-service'
 import SearchForm from '../../components/SearchForm/SearchForm'
-import Button from '../../components/Button/Button'
+
 
 
 class LandingPage extends Component {
@@ -26,15 +24,6 @@ class LandingPage extends Component {
             </div>
              
             <SearchForm/>
-            {/* {!TokenService.hasAuthToken()
-                ? <Link className="landingButton" to='/register'><Button>Register for more features!</Button></Link>
-                : <></>
-            } */}
-            {/* Not a part of the wireframe, not sure why it was added
-            
-            <Link className="landingButton" to='/login'>
-                <b>Login</b>
-            </Link> */}
 
            </>
         );
