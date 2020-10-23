@@ -51,18 +51,31 @@ class SearchForm extends Component {
     );
   }
 
+  placeChanged() {
+    const { history } = this.props;
+    const place = this.autocomplete.getPlace();
+    if(!place.geometry){
+      const predictionService = new window.google.maps.places.AutocompleteService();
+      predictionService.getPlacePredictions({input:place.name}, (predictions) => {
+        if(predictions.length) {
+          const { place_id, description } = predictions[0];
+          // TODO maybe use this prediction
+        }
+      });
+      return;
+    }
+    window.sessionStorage.setItem("targetPlace", place);
+    const { viewport } = place.geometry;
+    const ne = viewport.getNorthEast(), sw = viewport.getSouthWest();
+    history.push(`/sites?${sw.lng()},${ne.lat()},${ne.lng()},${sw.lat()}`);
+  }
+
   postRender() {
-    const { history, uiRef } = this.props;
+    const { uiRef } = this.props;
     if(uiRef)
       uiRef.current = this;
-    const autocomplete = new window.google.maps.places.Autocomplete(this.searchBoxRef.current);
-    autocomplete.addListener("place_changed", () => {
-      const place = autocomplete.getPlace();
-      window.sessionStorage.setItem("targetPlace", place);
-      const { viewport } = place.geometry;
-      const ne = viewport.getNorthEast(), sw = viewport.getSouthWest();
-      history.push(`/sites?${sw.lng()},${ne.lat()},${ne.lng()},${sw.lat()}`);
-    });
+    this.autocomplete = new window.google.maps.places.Autocomplete(this.searchBoxRef.current);
+    this.autocomplete.addListener("place_changed", this.placeChanged);
   }
 }
 
