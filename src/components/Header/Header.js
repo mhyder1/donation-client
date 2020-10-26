@@ -9,9 +9,9 @@ import './Header.css'
 
 class Header extends Component {
   static contextType = UserContext
-  handleLogoutClick = () => {
-    this.context.processLogout()
-  }
+  // handleLogoutClick = () => {
+  //   this.context.processLogout()
+  // }
 
   renderLogoutLink() {
     return (
@@ -20,7 +20,7 @@ class Header extends Component {
         <nav>
           <Link
             className='nav-item'
-            onClick={this.handleLogoutClick}
+            // onClick={this.handleLogoutClick}
             to='/'>
             Logout
           </Link>
@@ -67,6 +67,12 @@ class Header extends Component {
         </div>
       </header>
     );
+  }
+
+  static defaultProps = {
+    history: {
+      push: () => {},
+    }
   }
 }
 
