@@ -13,12 +13,18 @@ class RegistrationForm extends Component {
   }
 
   state = { error: null }
-
+  
   firstInput = React.createRef()
+
 
   handleSubmit = ev => {
     ev.preventDefault()
-    const { name, username, password } = ev.target
+    const { name, username, password, passwordVerify } = ev.target
+    const error = "Passwords do not match"
+    if(password.value !== passwordVerify.value) {
+      console.log( {error} );
+      return error;
+      }
     AuthApiService.postUser({
       label: name.value,
       username: username.value,
@@ -28,10 +34,14 @@ class RegistrationForm extends Component {
         name.value = ''
         username.value = ''
         password.value = ''
+        passwordVerify.value=''
         this.props.onRegistrationSuccess()
       })
       .catch(res => {
         this.setState({ error: res.error })
+      })
+      .catch(res=> {
+        res({error})
       })
   }
 
@@ -80,6 +90,17 @@ class RegistrationForm extends Component {
             type='password'
             required
           />
+        </div>
+        <div className="form-line">
+          <Label htmlFor='registration-password-verify'>
+            Verify Password<Required />
+            <Input
+              id='registration-password-verify'
+              name='passwordVerify'
+              type='password'
+              required
+            />
+          </Label>
         </div>
         <footer className="form-line">
           <Button type='submit'>
