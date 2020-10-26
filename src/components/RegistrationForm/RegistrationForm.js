@@ -20,10 +20,9 @@ class RegistrationForm extends Component {
   handleSubmit = ev => {
     ev.preventDefault()
     const { name, username, password, passwordVerify } = ev.target
-    const error = "Passwords do not match"
+    //const error = "Passwords do not match"
     if(password.value !== passwordVerify.value) {
-      console.log( {error} );
-      return error;
+      this.setState({ error:"Passwords do not match"})
       }
     AuthApiService.postUser({
       label: name.value,
@@ -40,9 +39,9 @@ class RegistrationForm extends Component {
       .catch(res => {
         this.setState({ error: res.error })
       })
-      .catch(res=> {
-        res({error})
-      })
+      // .catch(res=> {
+      //   res({error})
+      // })
   }
 
   componentDidMount() {
