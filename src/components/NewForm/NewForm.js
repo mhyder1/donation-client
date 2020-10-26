@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import './NewForm.css';
 import { Input, Required, Label , Textarea} from '../Form/Form';
 import Button from '../Button/Button';
-import LocationService from '../../services/location-service'
+import SiteService from '../../services/site-service'
+import GoogleService from '../../services/google-service'
 //use input names for reference to server naming convention
 
 class NewForm extends Component {
@@ -18,7 +19,7 @@ class NewForm extends Component {
     handleSubmit = ev => {
         ev.preventDefault()
         const { name, address, description, lat, lon} = ev.target
-        LocationService.postLocation({
+        SiteService.postLocation({
             label: name.label,
             description: description.value,
             address: address.value,
@@ -87,17 +88,7 @@ class NewForm extends Component {
         );
     }
     postRender() {
-        const autocomplete = new window.google.maps.places.Autocomplete(this.searchBoxRef.current);
-        autocomplete.addListener("place_changed", () => {
-          const { map } = window;
-          if(!map) // prevent this component from blowing up if tested without an attached map
-            return;
-          // height of the top area, plus 4rem for App (margin-top + padding-top + padding-bottom + margin-bottom)
-          const offset = this.searchBoxRef.current.getBoundingClientRect().bottom
-            + 4 * parseFloat(window.getComputedStyle(document.documentElement).fontSize);
-          console.log(`map-padding-top: ${offset}`);
-          map.fitBounds(autocomplete.getPlace().geometry.viewport, { top: offset });
-        });
+    GoogleService.autocomplete(this.searchBoxRef.current)
     }
 }
 
