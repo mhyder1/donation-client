@@ -6,7 +6,9 @@ import { Input, Label } from '../Form/Form';
 class SearchForm extends Component {
 
   searchBoxRef = React.createRef();
-  state = { error: null };
+  state = { 
+    error: null,
+  };
 
   componentDidMount() {
     this.postRender();
@@ -51,6 +53,19 @@ class SearchForm extends Component {
     );
   }
 
+  postPlace = (place) => {
+    if(!place) return
+    fetch('http://localhost:8000/api/places',{
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({place})
+    })
+    .then(res => res.json())
+    .then(data => console.log(data))
+  }
+
   placeChanged = () => {
     const { history } = this.props;
     const place = this.autocomplete.getPlace();
@@ -71,6 +86,8 @@ class SearchForm extends Component {
   }
 
   postRender() {
+    // console.log(this.searchBoxRef.current.value)
+    this.postPlace(this.searchBoxRef.current.value)
     const { uiRef } = this.props;
     if(uiRef)
       uiRef.current = this;
